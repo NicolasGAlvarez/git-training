@@ -93,3 +93,13 @@ around. Let's say you want to create a new branch called `testing`. You do this 
 currently on.
 
 How does git know what branch you're currently on? It keeps a special pointer called `HEAD`.
+
+Becaus a branch in git is actually a simple file that contains the 40 character SHA-1 checksum
+of the commit it points to, branches are cheap to create and destroy. Creating a new branch is
+as quick and simple as writing 41 bytes to a file (40 characters and a newline).
+
+Use `git switch <branch>` to switch to an existing branch.
+
+Create a new branch and switch to it `git switch -c <branch>`.
+
+Return to your previously checked out branch `git switch -`.
