@@ -27,7 +27,7 @@ will still be visible in the working tree but not in the snapshot.
 `git status` shows the current status of every file (use alias `gst`).
 `git log` shows a history of every commit (use aliases `glol` and `glola`).
 
-To commit a file is to move it from stage to the master (default name) branch. This creates a
+To commit a file is to move it from stage to the master branch (default name). This creates a
 new snapshot and changes the previously staged files status to 'unmodified'. Use the command
 `git commit -m "<message>"` (or the alias `gcmsg "<message>"`).
 
