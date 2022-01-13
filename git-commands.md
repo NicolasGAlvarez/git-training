@@ -1,3 +1,7 @@
+# Basics  
+
+## Local  
+
 The working tree is your current local folder. Every file added to the working tree won't be
 tracked by default by git, it won't be staged.
 
@@ -33,5 +37,23 @@ new snapshot and changes the previously staged files status to 'unmodified'. Use
 
 `git diff` compares the modified lines in unstaged files vs staged files.
 `git diff --staged` compares the modified lines in staged files vs the previous snapshot.
+
+## Remote  
+
+Remote repositories allows you to have versions of your project hosted on the internet. This allows
+other people to contribute to the project.
+
+To clone a repository use `git clone <repository url>`. This will get every file on the repo and
+clone it (copy it) to your local directory.
+
+To list all the remote repositories use `git remote`.
+The additional arg `-v` shows the url of every remote.
+
+To add a new remote to your current project use `git remote add <shortname> <url>`.
+
+To get data from your remote project you can run `git fetch <remote>`. This command goes out 
+to that remote project and pulls down all the data from that remote project that you don't 
+have yet. After you do this, you should have references to all the branches from that remote, 
+which you can merge in or inspect at any time.
 
 
