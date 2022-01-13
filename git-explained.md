@@ -38,6 +38,7 @@ new snapshot and changes the previously staged files status to 'unmodified'. Use
 `git diff` compares the modified lines in unstaged files vs staged files.
 `git diff --staged` compares the modified lines in staged files vs the previous snapshot.
 
+
 ## Remote  
 
 Remote repositories allows you to have versions of your project hosted on the internet. This allows
@@ -57,3 +58,38 @@ have yet. After you do this, you should have references to all the branches from
 which you can merge in or inspect at any time.
 
 
+## Branching  
+
+Git doesn't store data as a series of changesets or differences, but instead as a series of
+snapshots. When you make a commit, git stores a commit object that contains a pointer to the 
+snapshot of the content you staged.
+
+Let's assume that you have a directory containing three files, and you stage them all and commit.
+Staging the files computes a checksum for each one (SHA-1 hash), stores that version of the file
+in the git repository, and adds that checksum to the staging area.
+
+When you create the commit, git checksums each subdirectory and stores them as a tree object in the
+git repository. Git then creates a commit object that has the metadata and a pointer to the root
+project tree so it can re-create that snapshot when needed.
+
+Your git repository now contains five objects: three blobs (one checksum for each file), one tree
+that lists the contents of the directory and specifies which file names are stored as which blob,
+and one commit with the pointer to that root tree and all the commit metadata.
+
+If you make some changes and commit again, the next commit stores a pointer to the commit that
+came immediately before it.
+
+A branch in git is simply a lightweight movable pointer to one of these commits. The default
+branch name in git is `master`. As you start making commits, you're given a `master` branch that
+points to the last commit you made. Every time you commit, the `master` branch pointer moves
+forward automatically.
+
+
+### Creating a new branch
+
+What happens when you create a new branch? Well, doing so creates a new pointer for you to move
+around. Let's say you want to create a new branch called `testing`. You do this with the
+`git branch` command: `git branch testing`. This creates a new pointer to the same commit you're 
+currently on.
+
+How does git know what branch you're currently on? It keeps a special pointer called `HEAD`.
