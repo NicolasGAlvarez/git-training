@@ -24,5 +24,14 @@ staging a STATE of that file. If it is then modified in the working tree but not
 the following commit will have the state in which was staged, the 'new' state. The modifications
 will still be visible in the working tree but not in the snapshot.
 
+`git status` shows the current status of every file (use alias `gst`).
+`git log` shows a history of every commit (use aliases `glol` and `glola`).
+
+To commit a file is to move it from stage to the master (default name) branch. This creates a
+new snapshot and changes the previously staged files status to 'unmodified'. Use the command
+`git commit -m "<message>"` (or the alias `gcmsg "<message>"`).
+
+`git diff` compares the modified lines in unstaged files vs staged files.
+`git diff --staged` compares the modified lines in staged files vs the previous snapshot.
 
 
