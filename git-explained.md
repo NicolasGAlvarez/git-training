@@ -103,3 +103,22 @@ Use `git switch <branch>` to switch to an existing branch.
 Create a new branch and switch to it `git switch -c <branch>`.
 
 Return to your previously checked out branch `git switch -`.
+
+
+### Merging branches
+
+To merge a branch first switch to the branch your are gona merge into,
+in this case the master branch `git checkout master`. And then do a merge 
+`git merge <branch to merge>`. 
+
+If the new content does not conflict with the data already on master, git will 
+`auto-merge`. That is, it will add the new content to the already created files.
+
+In case of conflic, git will create a warning and wait for the user to manually resolve
+conflicts in each file. You can open every file with vsCode and make use of the options
+above each conflict: either accept the incoming data or keep the old one.
+
+Once finished you can check `git status` and see which files need to be added 
+`git add <file>` and lastly commited `git commit`. Doing so will open the default editor
+and wait for a message just like when commiting. Once closed the editor git finishes
+the merge.
