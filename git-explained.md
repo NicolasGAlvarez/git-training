@@ -122,3 +122,7 @@ Once finished you can check `git status` and see which files need to be added
 `git add <file>` and lastly commited `git commit`. Doing so will open the default editor
 and wait for a message just like when commiting. Once closed the editor git finishes
 the merge.
+
+To check already merged branches use `git branch --merged`. Similarly, you can use 
+`git branch --no-merged`. Branches already merged can be safely deleted 
+`git branch -d <branch>`.
